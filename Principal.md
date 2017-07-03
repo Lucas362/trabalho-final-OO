@@ -84,11 +84,11 @@ public class Principal {
 					String formaIngresso = JOptionPane.showInputDialog("Digite a forma de ingresso do aluno");
 					String curso = JOptionPane.showInputDialog("Digite o curso do aluno");
 					Date provavelFormatura = inputFormat.parse(JOptionPane.showInputDialog("Digite a provavel data de "
-							+ "formatura do aluno (formato: mm/dd/yy)"));
+							+ "formatura do aluno (formato: dd/mm/aa)"));
 					Graduacao g = new Graduacao(matricula, nome, semestreIngresso, formaIngresso, curso, provavelFormatura);
 					alunoG.add(g);
 				}catch(ParseException e){
-					JOptionPane.showMessageDialog(null, "formato de data incorreta!");
+					JOptionPane.showMessageDialog(null, "formato de data incorreta (formato: dd/mm/aa)!");
 				}catch(NumberFormatException e){
 					JOptionPane.showMessageDialog(null, "entrada não permitida");
 				}				
@@ -96,12 +96,12 @@ public class Principal {
 				break;
 			case 2:
 				try{
-					SimpleDateFormat inputFormat = new SimpleDateFormat("MM/dd/yy");
+					SimpleDateFormat inputFormat = new SimpleDateFormat("dd/mm/yy");
 					int matricula = Integer.parseInt(JOptionPane.showInputDialog("Digite a matricula do aluno"));
 					String nome = JOptionPane.showInputDialog("Digite o nome do aluno");
 					String semestreIngresso = JOptionPane.showInputDialog("Digite o semestre de ingresso do aluno");
 					String semestreQualificacao = JOptionPane.showInputDialog("Digite o semestre de qualificação do aluno");
-					Date dataDefesa = inputFormat.parse(JOptionPane.showInputDialog("Digite a provavel data de formatura do aluno"));
+					Date dataDefesa = inputFormat.parse(JOptionPane.showInputDialog("Digite a provavel data de formatura do aluno (formato: dd/mm/aa)"));
 	
 					PosGraduacao pg = new PosGraduacao(matricula, nome, semestreIngresso, semestreQualificacao, dataDefesa);
 					alunoPG.add(pg);
@@ -113,19 +113,19 @@ public class Principal {
 				break;
 			case 3:
 				try{
-					SimpleDateFormat inputFormat = new SimpleDateFormat("MM/dd/yy");
+					SimpleDateFormat inputFormat = new SimpleDateFormat("dd/mm/yy");
 					int matricula = Integer.parseInt(JOptionPane.showInputDialog("Digite a matricula do aluno"));
 					String nome = JOptionPane.showInputDialog("Digite o nome do aluno");
 					String semestreIngresso = JOptionPane.showInputDialog("Digite o semestre de ingresso do aluno");
 					String semestreQualificacao = JOptionPane.showInputDialog("Digite o semestre de qualificação do aluno");
-					Date dataDefesa = inputFormat.parse(JOptionPane.showInputDialog("Digite a provavel data de formatura do aluno"));
+					Date dataDefesa = inputFormat.parse(JOptionPane.showInputDialog("Digite a provavel data de formatura do aluno (formato: dd/mm/aa)"));
 					boolean taxaPaga = Boolean.parseBoolean(JOptionPane.showInputDialog("Pagou taxa? (True ou False)"));
 					String semestreCursado  = JOptionPane.showInputDialog("Digite semestre cursado");
 	
 					Especial e = new Especial(matricula, nome, semestreIngresso, semestreQualificacao, dataDefesa, taxaPaga, semestreCursado);
 					alunoE.add(e);
 				}catch(ParseException e){
-					JOptionPane.showMessageDialog(null, "formato de data incorreta!");
+					JOptionPane.showMessageDialog(null, "formato de data incorreta (formato: dd/mm/aa)!");
 				}catch(NumberFormatException e){
 					JOptionPane.showMessageDialog(null, "entrada não permitida");
 				}
@@ -212,7 +212,7 @@ public class Principal {
 				break;
 			case 8:
 				try{
-					SimpleDateFormat inputFormat = new SimpleDateFormat("MM/dd/yy");
+					SimpleDateFormat inputFormat = new SimpleDateFormat("dd/mm/yy");
 					int matriculaSiape = Integer.parseInt(JOptionPane.showInputDialog("Digite a matricula Siape do professor"));
 					int matriculaFUB = Integer.parseInt(JOptionPane.showInputDialog("Digite a matricula FUB do professor"));
 					String formacao = JOptionPane.showInputDialog("Digite a formação do professor");
@@ -226,8 +226,8 @@ public class Principal {
 					int anoDoutorado = Integer.parseInt(JOptionPane.showInputDialog("Digite o ano do doutorado do professor"));
 					String tituloTese = JOptionPane.showInputDialog("Digite o título da tese do professor");
 					String areaDePesquisa = JOptionPane.showInputDialog("Digite a área de pesquisa do professor");
-					Date concurso = inputFormat.parse(JOptionPane.showInputDialog("Digite a data do concurso do professor"));
-					Date dataDeAdmissao = inputFormat.parse(JOptionPane.showInputDialog("Digite a data de admissão do professor"));;
+					Date concurso = inputFormat.parse(JOptionPane.showInputDialog("Digite a data do concurso do professor (formato: dd/mm/aa)"));
+					Date dataDeAdmissao = inputFormat.parse(JOptionPane.showInputDialog("Digite a data de admissão do professor (formato: dd/mm/aa)"));;
 	
 	
 					Titular t = new Titular(matriculaSiape, matriculaFUB, formacao, salario, graduacao, anoGraduacao, 
@@ -235,7 +235,7 @@ public class Principal {
 							tituloTese, areaDePesquisa, concurso, dataDeAdmissao);
 					professorT.add(t);
 				}catch(ParseException e){
-					JOptionPane.showMessageDialog(null, "formato de data incorreta!");
+					JOptionPane.showMessageDialog(null, "formato de data incorreta (formato: dd/mm/aa)!");
 				}catch(NumberFormatException e){
 					JOptionPane.showMessageDialog(null, "entrada não permitida");
 				}
@@ -286,5 +286,6 @@ public class Principal {
 
 	}
 }
+
 
 ```
