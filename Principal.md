@@ -132,15 +132,15 @@ public class Principal {
 				break; 	
 			case 4:
 				try{
-				int matriculaSiape = Integer.parseInt(JOptionPane.showInputDialog("Digite a matricula Siape do professor"));
-				int matriculaFUB = Integer.parseInt(JOptionPane.showInputDialog("Digite a matricula FUB do professor"));
-				String formacao = JOptionPane.showInputDialog("Digite a formação do professor");
-				float salario = Float.parseFloat(JOptionPane.showInputDialog("Digite o salário do professor"));
-				String graduacao = JOptionPane.showInputDialog("Digite a graduação do professor");
-				int anoGraduacao = Integer.parseInt(JOptionPane.showInputDialog("Digite o ano de graduação do professor"));
-
-				Auxiliar a = new Auxiliar(matriculaSiape, matriculaFUB, formacao, salario, graduacao, anoGraduacao);
-				professorAux.add(a);	
+					int matriculaSiape = Integer.parseInt(JOptionPane.showInputDialog("Digite a matricula Siape do professor"));
+					int matriculaFUB = Integer.parseInt(JOptionPane.showInputDialog("Digite a matricula FUB do professor"));
+					String formacao = JOptionPane.showInputDialog("Digite a formação do professor");
+					float salario = Float.parseFloat(JOptionPane.showInputDialog("Digite o salário do professor"));
+					String graduacao = JOptionPane.showInputDialog("Digite a graduação do professor");
+					int anoGraduacao = Integer.parseInt(JOptionPane.showInputDialog("Digite o ano de graduação do professor"));
+	
+					Auxiliar a = new Auxiliar(matriculaSiape, matriculaFUB, formacao, salario, graduacao, anoGraduacao);
+					professorAux.add(a);	
 				}catch(NumberFormatException e){
 					JOptionPane.showMessageDialog(null, "entrada não permitida");
 				}
@@ -286,6 +286,5 @@ public class Principal {
 
 	}
 }
-
 
 ```
